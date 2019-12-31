@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Quizes</title>
+        <style>
+    p,input{
+        display: inline;
+    }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <button id="a" onClick =" renderQuestion()">render question</button><br><br>
+        <p id="q" > </p>
+        <br><br><br>
+        <input type="radio" name="a" id="o1"><p id="opt1" ></p><br>
+        <input type="radio" name="a" id="o2"><p id="opt2" ></p><br>
+        <input type="radio" name="a" id="o3"><p id="opt3" ></p><br>
+        <input type="radio" name="a" id="o4"> <p id="opt4" ></p>
+        
+        
+        
+    </div>
+    
+    
+    <br>
+    <br><br>
+    <button onClick="nextQuestion()">Next</button>
+    <br><br>
+    <button onClick='quizes()' >quizes</button>
+    <br><br>
+    <button onClick='render()' id="quiz" ></button>
+    
+    
+    
+    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+    <script src="../js/auth.js" ></script>
+    <script>
+        
+        var questions = [];
+        var count = 0
+        var n;
+        quizes();
+        // getdata()
+        function getdata() {
+            // alert(n)
+            alert(n)
+            // var uid = firebase.auth().currentUser.uid;
+            firebase.database().ref('/').child(`questions`).on('child_added', (data) => {
+                // console.log(data.val())
+                questions.push(data.val())
+            })
+        }
+        
+
+function renderQuestion() {
+    var q = document.getElementById('q');
+    var opt1 = document.getElementById('opt1');
+    var opt2 = document.getElementById('opt2');
+    var opt3 = document.getElementById('opt3');
+    var opt4 = document.getElementById('opt4');
+    // q.innerHTML = data
+    q.innerHTML ="Question: "+ questions[count].question
+    opt1.innerHTML = questions[count].o1
+    opt2.innerHTML = questions[count].o2
+    opt3.innerHTML = questions[count].o3
+    opt4.innerHTML = questions[count].o4
+
+
+}
+
+function nextQuestion() {
+    // if(question == null){alert("jmm")}
+    // firebase.database().ref('/').child(`questions`).child('question').on('child_added', (data) => {
+
+    //     if(data.child("question").val()== undefined){
+    //         alert("hhh")
+    //     }
+
+    // });
+    count++
+    var q = document.getElementById('q');
+    var opt1 = document.getElementById('opt1');
+    var opt2 = document.getElementById('opt2');
+    var opt3 = document.getElementById('opt3');
+    var opt3 = document.getElementById('opt4');
+    q.innerHTML = "Question: "+ questions[count].question
+
+        opt1.innerHTML = questions[count].o1
+        opt2.innerHTML = questions[count].o2
+        opt3.innerHTML = questions[count].o3
+        opt4.innerHTML = questions[count].o4
+   
+    
+}
+function quizes(){
+
+    firebase.database().ref('/').child('QUIZES').on('child_added', data=>{
+       n = data.child('quizName').val();
+        alert(n)
+    })
+}
+function render(){
+    firebase.database().ref('/').child(n).child('questions').on('child_added', data=>{
+    var question = data.child('question').val();
+    alert(question)
+    
+    })
+
+}
+        
+        </script>
+</body>
+</html>

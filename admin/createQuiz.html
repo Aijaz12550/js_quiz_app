@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Admin</title>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <style>
+     .question{
+         visibility: hidden;
+     }
+     input{
+         width:60%;
+
+     }
+     .question{
+         margin-left: 20%;
+     }
+     input,legend{
+         display: inline;
+     }
+     legend{
+         font-size: 1.1em
+     }
+     #title{
+         margin-top: 4%;
+         margin-left: 20%;
+     }
+        </style>
+</head>
+<body>
+    
+    <!-- <img src="https://graph.facebook.com/769918363383747/picture" alt=""> -->
+    
+
+        <div class="main">
+            <div class="title" id="title">
+                <legend>Please Enter Quiz Name:</legend>
+              <input type="text" name="" id="quizName">
+              <br><br>
+               <!-- <button onClick = "title()">ok</button>  -->
+              <button onClick = "t()" >Submit</button>
+            </div> 
+
+            <div class="question" id="question" >
+                <legend id="qc">Question</legend>
+                <input type="text" name="" id="q">
+                <p>check the radio button of corresponding true option.</p>
+                <div class="option">
+                    <legend>Option 1</legend><input type="radio" name="radio" class="radio" id="ao1">
+                    <input type="text" id="o1">  <br><br>
+                    
+                    <legend>Option 2</legend><input type="radio" name="radio" class="radio" id="ao2">
+                    <input type="text"id="o2"><br><br>
+                    
+                    <legend>Option 3</legend><input type="radio" name="radio" class="radio" id="ao3">
+                    <input type="text"id="o3"><br><br>
+                    
+                    <legend>Option 4</legend><input type="radio" name="radio" class="radio" id="ao4">
+                    <input type="text" id="o4"><br><br>
+                    <button onClick = "submit()" >Submit</button>
+                </div>
+                
+            </div>
+        </div>
+        
+    
+
+    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+    <script src="./js/auth.js" ></script>
+    <script src="./js/createQuiz.js" ></script>
+</body>
+</html>

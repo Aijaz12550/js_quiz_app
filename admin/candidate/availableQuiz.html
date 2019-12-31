@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <title>Available Quizes</title>
+    <style>
+    #next{
+        margin-left: 80%;
+        margin-bottom: 5%;
+
+    }
+    #d{
+margin: 5%;
+    }
+
+    #answer{
+        visibility: hidden;
+    }
+    #av{
+margin-bottom: 2%;
+    }
+    #av{
+        border-radius: 15px;
+        height: 50px;
+        background-color: dodgerblue;
+        color: white;
+        font-size: 22px;
+    }
+    #questions{
+        visibility: hidden;
+        margin: 2%;
+    }
+    </style>
+</head>
+<body>
+
+    <div id="d">
+        
+        <p></p>
+        
+        
+    <!-- </div>
+    <div class="quiz" id="quiz"> -->
+            <button  onClick="quizes()" id='av'>Click to see available Quizes</button>
+<table id="table" >
+
+</table>
+    </div>
+    <div id='time' >
+        <p id='ptime'></p>
+    </div>
+    
+    <div id="questions">
+
+        <p id="q" > </p>
+        <br><br><br>
+        <input type="radio" name="a" id="o1"><p id="opt1" ></p><br>
+        <input type="radio" name="a" id="o2"><p id="opt2" ></p><br>
+        <input type="radio" name="a" id="o3"><p id="opt3" ></p><br>
+        <input type="radio" name="a" id="o4"> <p id="opt4" ></p>
+        <p id="answer"></p>
+        <br>
+        <button src="next()" id="next" >next</button>
+        
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+    <script src="../js/auth.js" ></script>
+    <script src="./availQuizes.js"></script>
+    <!-- <script  src="./sample.js" > -->
+    
+    </script>
+
+    <style>
+    input,p{
+        display: inline;
+    }
+    #questions{
+        width: 60%;
+        height: 80%;
+        margin: 10%;
+        border:firebrick;
+        border-style: dotted; 
+    }
+    button{
+        margin-left: 55%;
+    }
+  tr{
+      width: 500px;
+      border-style: solid;
+      border-radius:25px;
+  }
+  #td2{
+      width: 400px;
+  }
+  #txt{
+      width: 380px;
+  } 
+  table{
+      margin-left: 15%;
+  }
+  #btn{
+      color: white;
+      background-color: brown;
+      /* margin-right: 0px; */
+      margin-left: 300px;
+  }
+
+    </style>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script>
+        function next(){
+
+            alert(document.getElementById('answer'))
+        }
+    </script>
+</body>
+</html>

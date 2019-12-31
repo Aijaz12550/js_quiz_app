@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=0.8">
+    <title>SignIn</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+ 
+  </head>
+
+
+  <body>
+      
+      <div class="container col-sm- col-lg- col-md-8">
+
+        <h1>Admin SignIn</h1>
+        <a href="../index.html">  < Back</a>
+      
+        <hr>
+
+        <label id="le" for=""><b>Email</b></label>
+        <input type="email" placeholder="Enter Email" id="email" name="email" required>
+
+        <label id="lp" for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" id="password" name="psw" required>
+
+        <button type="" class="registerbtn" onClick="return signin()" >SignIn</button>
+            <hr>
+
+      </div>
+
+  <script>
+  function signin(){
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+    if(email == "admin"){
+      if(password=="admin"){
+        window.location.replace('./createQuiz.html')
+      }
+    }
+    else{
+      swal("please fill \n Email = admin \n Password = admin")
+    }
+  }
+  </script>
+
+  </body>
+</html>
